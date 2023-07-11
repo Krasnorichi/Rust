@@ -31,3 +31,5 @@ fn main() {
     println!("Area: {}", rect.area());
     println!("Perimeter: {}", rect.perimeter());
 }
+
+
