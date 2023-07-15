@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Set up Rust
+      uses: actions/setup-rust@v1
+      with:
+        rust-version: stable
+
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Build and test homework2t1
+      run: |
+        cd hw/src
+        cargo build --bin homework2t1
+        cargo test --bin homework2t1
+
+    - name: Build and test homework2t2
+      run: |
+        cd hw/src
+        cargo build --bin homework2t2
+        cargo test --bin homework2t2
+
+
